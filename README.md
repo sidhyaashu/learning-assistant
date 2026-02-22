@@ -79,8 +79,21 @@ Fill in your `.env` with:
 - `OPENROUTER_API_KEY` (Optional but highly recommended)
 
 ### 3. Run the App
-- **Backend**: `uvicorn main:app --reload --port 8000`
-- **Frontend**: `cd client && npm install && npm run dev`
+- **Backend (Local)**: `cd server && python main.py`
+- **Frontend (Local)**: `cd client && npm run dev`
+
+## 🚀 Deployment (Vercel)
+
+This project is configured as a monorepo for seamless deployment on Vercel.
+
+### Backend (Python FastAPI)
+The server uses the `api/index.py` convention for Vercel's Python runtime. 
+1. Connect your GitHub repository to Vercel.
+2. Vercel will automatically detect the configuration in `vercel.json`.
+3. Add the environment variables from `server/.env.example` to your Vercel Project Settings.
+
+### Frontend (Next.js)
+The frontend in `client/` can be deployed as a standard Next.js project. If deploying separately, ensure you update the `NEXT_PUBLIC_API_URL` to point to your Vercel backend URL.
 
 ## 📂 Project Structure
 
