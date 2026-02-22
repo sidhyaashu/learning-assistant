@@ -30,6 +30,7 @@ _additional_origins = os.getenv("ADDITIONAL_ORIGINS", "")
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://learning-assistant-ighr.vercel.app"
 ]
 if _additional_origins:
     ALLOWED_ORIGINS.extend([o.strip() for o in _additional_origins.split(",") if o.strip()])
